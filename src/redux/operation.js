@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const instance = axios.create({
 
-  baseURL: 'https://6570796e09586eff66417617.mockapi.io/rent-car',
+  baseURL: 'https://6570796e09586eff66417617.mockapi.io/rent-car/cars',
 });
 
 export const getFetchCars = createAsyncThunk(
