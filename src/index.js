@@ -2,16 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import './index.css';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider>
+    {/* <Provider store={store}> */}
       {/* <PersistGate loading={null} persistor={persistor}> */}
-        <BrowserRouter basename="/yourPets-project-front">
+        <BrowserRouter basename="/rent-car">
           <App />
         </BrowserRouter>
       {/* </PersistGate> */}
-    </Provider>  </React.StrictMode>
+    {/* </Provider>   */}
+    </React.StrictMode>
 );
