@@ -15,7 +15,7 @@ import { carsReducer } from './slice';
 const persistConfig = {
   key: 'rentCars',
   storage,
-  // whitelist: ['token'],
+  whitelist: ['favorites'],
 };
 
 export const store = configureStore({
