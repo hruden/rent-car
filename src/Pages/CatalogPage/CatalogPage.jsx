@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFetchCars } from '../../redux/operation';
 import { selectCars, selectPage } from '../../redux/select';
-import FormSearch from 'components/FormSearch/FormSearch';
+// import FormSearch from 'components/FormSearch/FormSearch';
 import CatalogList from 'components/CatalogList/CatalogList';
 
 export default function CatalogPage() {
@@ -16,7 +16,7 @@ export default function CatalogPage() {
 
   return (
     <>
-      <FormSearch/>
+      {/* <FormSearch/> */}
       <CatalogList list={rentCars}/>
     </>
   );
