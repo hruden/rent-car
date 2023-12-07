@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFetchCars } from '../../redux/operation';
 import { selectCars, selectPage } from '../../redux/select';
+import FormSearch from 'components/FormSearch/FormSearch';
+import CatalogList from 'components/CatalogList/CatalogList';
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -12,7 +14,10 @@ export default function CatalogPage() {
     dispatch(getFetchCars(page));
   }, [dispatch, page]);
 
-  console.log(rentCars);
-
-  return <div>CatalogPage</div>;
+  return (
+    <>
+      <FormSearch/>
+      <CatalogList list={rentCars}/>
+    </>
+  );
 }
