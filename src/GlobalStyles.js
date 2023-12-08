@@ -47,10 +47,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root{
-    /* font-family: 'Manrope', sans-serif;
-  line-height: 1.5;
-  font-weight: 400; */
-
+    
 --black: #000000;
   --white: #ffffff;
   --brand: #3470ff;
@@ -83,8 +80,6 @@ a{
 }
 ul, ol {
     list-style: none;
-    margin: 0;
-    padding: 0;
   }
 
   img {

@@ -1,6 +1,6 @@
 import ModalCarInfo from 'components/ModalCarInfo/ModalCarInfo';
 import { useState } from 'react';
-import { Item } from './CatalogList.styled';
+import { Card, DividerContainer, Item, List } from './CatalogList.styled';
 
 export default function CatalogList({ list }) {
   const [modalActive, setModalActive] = useState(false);
@@ -21,14 +21,14 @@ export default function CatalogList({ list }) {
           functionalities,
           id,
         }) => (
-            <div key={id}>
+            <Card key={id}>
               <img src={img} alt="car" width={274} height={268} />
-              <ul>
-                <div>
+              <List>
+                <DividerContainer>
                   <li>{make}</li>
                   <Item>{year}</Item>
                   <li>{rentalPrice}</li>
-                </div>
+                </DividerContainer>
                 <div>
                   <div>
                     <li>{address.split(',').slice(-2)}</li>
@@ -41,12 +41,12 @@ export default function CatalogList({ list }) {
                     <li>{functionalities[0]}</li>
                   </div>
                 </div>
-              </ul>
+              </List>
               <button type="button" onClick={() => setModalActive(true)}>
                 Learn More
               </button>
               {/* <ModalCarInfo active={modalActive} setActive={setModalActive} carId={id}/> */}
-            </div>
+            </Card>
         )
       )}
     </>
