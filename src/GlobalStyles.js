@@ -47,9 +47,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root{
-    font-family: 'Manrope', sans-serif;
+    /* font-family: 'Manrope', sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 400; */
 
 --black: #000000;
   --white: #ffffff;
@@ -66,8 +66,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: 'Manrope', sans-serif, 'Montserrat';
+    line-height: 1.5;
+    font-weight: 400;
     background-color: var(--white);
     color: var(--black);
   }

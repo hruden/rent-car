@@ -1,5 +1,6 @@
 import ModalCarInfo from 'components/ModalCarInfo/ModalCarInfo';
 import { useState } from 'react';
+import { Item } from './CatalogList.styled';
 
 export default function CatalogList({ list }) {
   const [modalActive, setModalActive] = useState(false);
@@ -25,12 +26,12 @@ export default function CatalogList({ list }) {
               <ul>
                 <div>
                   <li>{make}</li>
-                  <li>{year}</li>
+                  <Item>{year}</Item>
                   <li>{rentalPrice}</li>
                 </div>
                 <div>
                   <div>
-                    <li>{address}</li>
+                    <li>{address.split(',').slice(-2)}</li>
                     <li>{rentalCompany}</li>
                   </div>
                   <div>
@@ -44,7 +45,7 @@ export default function CatalogList({ list }) {
               <button type="button" onClick={() => setModalActive(true)}>
                 Learn More
               </button>
-              <ModalCarInfo active={modalActive} setActive={setModalActive} carId={id}/>
+              {/* <ModalCarInfo active={modalActive} setActive={setModalActive} carId={id}/> */}
             </div>
         )
       )}
