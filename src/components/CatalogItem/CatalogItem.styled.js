@@ -5,6 +5,7 @@ width: 280px;
 margin: 20px auto 15px;
 scale: 1;
 transition: scale var(--transition);
+box-shadow: 3px 8px 14px 0px #88c6fd30;
 &:hover,:focus{
   scale: 1.05;
 }

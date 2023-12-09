@@ -14,5 +14,5 @@ export const Container = styled.div`
   }
 `;
 export const HeaderContainer = styled.div`
-border: 1px solid green;
+border-bottom: 1px solid var(--brand);
 `
