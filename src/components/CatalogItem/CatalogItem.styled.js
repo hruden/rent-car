@@ -44,6 +44,7 @@ export const Item = styled.li`
 export const BtnLearnMore = styled.button`
 padding: 12px;
 width: 100%;
+font-weight: 600;
 border: transparent;
 border-radius: 12px;
 cursor: pointer;
