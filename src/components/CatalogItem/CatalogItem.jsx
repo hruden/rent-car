@@ -1,5 +1,14 @@
-import Divider from "Divider/Divider";
-import { Card, TitleContainer, Item, List, TextContainer, Img, BtnLearnMore } from "./CatalogItem.styled";
+import Divider from 'Divider/Divider';
+import {
+  Card,
+  TitleContainer,
+  Item,
+  List,
+  TextContainer,
+  Img,
+  BtnLearnMore,
+  ContainerImg,
+} from './CatalogItem.styled';
 
 export default function CatalogItem({ list }) {
   const {
@@ -16,19 +25,28 @@ export default function CatalogItem({ list }) {
     // id,
   } = list;
   return (
-          <Card>
-            <Img src={img} alt="car" width={280} height={268} loading="lazy" />
-            <List>
-              <TitleContainer>
-                <li>{make}, {year}</li>
-                <li>{rentalPrice}</li>
-              </TitleContainer>
-                <TextContainer>
-                  <li>{address.split(',').slice(-2)} <Divider/> {rentalCompany}</li>
-                  <Item>{type} <Divider/> {model} <Divider/> {mileage} <Divider/> {functionalities[0]}</Item>
-                </TextContainer>
-            </List>
-            <BtnLearnMore type="button">Learn More</BtnLearnMore>
-          </Card>
+    <Card>
+      <ContainerImg>
+        <Img src={img} alt="car" loading="lazy" />
+      </ContainerImg>
+      <List>
+        <TitleContainer>
+          <li>
+            {make}, {year}
+          </li>
+          <li>{rentalPrice}</li>
+        </TitleContainer>
+        <TextContainer>
+          <Item>
+            {address.split(',').slice(-2)} <Divider /> {rentalCompany}
+          </Item>
+          <Item>
+            {type} <Divider /> {model} <Divider /> {mileage} <Divider />{' '}
+            {functionalities[0]}
+          </Item>
+        </TextContainer>
+      </List>
+      <BtnLearnMore type="button">Learn More</BtnLearnMore>
+    </Card>
   );
 }

@@ -3,6 +3,20 @@ import styled from 'styled-components';
 export const Card = styled.div`
 width: 280px;
 margin: 20px auto 15px;
+scale: 1;
+transition: scale var(--transition);
+&:hover,:focus{
+  scale: 1.05;
+}
+
+@media screen and (min-width: 768px) {
+  margin: 0;
+  margin-top: 20px;
+}
+`
+export const ContainerImg = styled.div`
+width: 280px;
+height: 210px;
 `
 export const Img = styled.img`
 border-radius: 14px;
@@ -32,6 +46,12 @@ padding: 12px;
 width: 100%;
 border: transparent;
 border-radius: 12px;
+cursor: pointer;
 color: var(--white);
 background-color: var(--brand);
+transition: background-color var(--transition);
+&:hover,:focus{
+  background-color: var(--accent);
+
+}
 `
