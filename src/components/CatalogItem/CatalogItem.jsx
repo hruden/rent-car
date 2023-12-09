@@ -1,4 +1,5 @@
 import Divider from 'Divider/Divider';
+import Fallback from '../../assets/images/fallback.jpg'
 import {
   Card,
   TitleContainer,
@@ -27,7 +28,7 @@ export default function CatalogItem({ list }) {
   return (
     <Card>
       <ContainerImg>
-        <Img src={img} alt="car" loading="lazy" />
+        <Img src={img?img:Fallback} alt="car" loading="lazy" />
       </ContainerImg>
       <List>
         <TitleContainer>

@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { Container, HeaderContainer } from "./Layout.styled";
 import Header from "../components/Header/Header";
+import Loader from "components/Loader/Loader";
 
 export default function Layout(){
 return(
@@ -9,7 +10,7 @@ return(
     <HeaderContainer><Header/></HeaderContainer>
     <Suspense
       fallback={
-        <div>...Loading</div>
+        <Loader/>
       }
     >
       <Outlet />
