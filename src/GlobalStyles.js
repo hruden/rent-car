@@ -52,6 +52,7 @@ export const GlobalStyle = createGlobalStyle`
   --white: #ffffff;
   --brand: #3470ff;
   --accent: #0b44cd;
+  --textTitle: #121417;
   --textInfo: rgba(18, 20, 23, 0.50);
   --textDivider: rgba(18, 20, 23, 0.1);
   --transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,4 +1,5 @@
-import { Card, DividerContainer, Item, List } from "./CatalogItem.styled";
+import Divider from "Divider/Divider";
+import { Card, TitleContainer, Item, List, TextContainer, Img, BtnLearnMore } from "./CatalogItem.styled";
 
 export default function CatalogItem({ list }) {
   const {
@@ -12,31 +13,22 @@ export default function CatalogItem({ list }) {
     type,
     mileage,
     functionalities,
-    id,
+    // id,
   } = list;
   return (
-          <Card key={id}>
-            <img src={img} alt="car" width={274} height={268} loading="lazy" />
+          <Card>
+            <Img src={img} alt="car" width={280} height={268} loading="lazy" />
             <List>
-              <DividerContainer>
-                <li>{make}</li>
-                <Item>{year}</Item>
+              <TitleContainer>
+                <li>{make}, {year}</li>
                 <li>{rentalPrice}</li>
-              </DividerContainer>
-              <div>
-                <div>
-                  <li>{address.split(',').slice(-2)}</li>
-                  <li>{rentalCompany}</li>
-                </div>
-                <div>
-                  <li>{type}</li>
-                  <li>{model}</li>
-                  <li>{mileage}</li>
-                  <li>{functionalities[0]}</li>
-                </div>
-              </div>
+              </TitleContainer>
+                <TextContainer>
+                  <li>{address.split(',').slice(-2)} <Divider/> {rentalCompany}</li>
+                  <Item>{type} <Divider/> {model} <Divider/> {mileage} <Divider/> {functionalities[0]}</Item>
+                </TextContainer>
             </List>
-            <button type="button">Learn More</button>
+            <BtnLearnMore type="button">Learn More</BtnLearnMore>
           </Card>
   );
 }
