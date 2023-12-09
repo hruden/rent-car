@@ -1,9 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import { GlobalStyle } from '../GlobalStyles';
 import Layout from '../Layout/Layout';
-import HomePage from '../Pages/HomePage/HomePage';
-import CatalogPage from 'Pages/CatalogPage/CatalogPage';
-import FavoritesPage from 'Pages/FavoritesPage/FavoritesPage';
+import { lazy } from 'react';
+
+const HomePage = lazy(() => import('Pages/HomePage/HomePage'));
+const CatalogPage = lazy(() => import('Pages/CatalogPage/CatalogPage'));
+const FavoritesPage = lazy(() => import('Pages/FavoritesPage/FavoritesPage'));
 
 export const App = () => {
   return (
@@ -12,7 +14,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/catalog" element={<CatalogPage/>} />
           <Route path="/favorites" element={<FavoritesPage />} />
         </Route>
       </Routes>
