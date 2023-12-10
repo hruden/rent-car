@@ -1,4 +1,4 @@
-import Divider from 'Divider/Divider';
+import Divider from 'components/Divider/Divider';
 import Fallback from '../../assets/images/fallback.jpg'
 import {
   Card,

@@ -5,6 +5,6 @@ export const ContainerList = styled.div`
 display:flex;
 flex-wrap: wrap;
 gap: 30px;
-justify-content: center;
+justify-content: start;
 }
 `

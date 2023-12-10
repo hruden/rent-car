@@ -29,6 +29,12 @@ const carsSlice = createSlice({
         favorites: action.payload,
       };
     },
+    currentPage: (state, action) => {
+      return {
+        ...state,
+        page: action.payload,
+      };
+    },
   },
   extraReducers: builder => {
     builder
@@ -41,5 +47,5 @@ const carsSlice = createSlice({
   },
 });
 
-export const { favoritesCars } = carsSlice.actions;
+export const { favoritesCars, currentPage } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;
