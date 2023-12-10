@@ -16,11 +16,4 @@ export const getFetchCars = createAsyncThunk(
     }
   }
 );
-export const getFetchOneCar = async (carId) => {
-  try {
-    const res = await axios.get(`/cars/?id=${carId}`);
-    return res.data;
-  } catch (error) {
-    return alert.error.message;
-  }
-};
+

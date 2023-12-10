@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { favoritesCars } from '../../redux/slice';
 import { selectFavorites } from '../../redux/select';
 
-export default function CatalogItem({ list }) {
+export default function CatalogItem({ list, activeModal }) {
   const favorites = useSelector(selectFavorites);
 
   const dispatch = useDispatch();
@@ -39,6 +39,10 @@ export default function CatalogItem({ list }) {
   const handleFavorite = () => {
     dispatch(favoritesCars(id));
   };
+
+  const handleOpenModal =()=>{
+activeModal(list)
+  }
 console.log()
   return (
     <Card>
@@ -58,12 +62,12 @@ console.log()
             {address.split(',').slice(-2)} <Divider /> {rentalCompany}
           </Item>
           <Item>
-            {type} <Divider /> {model} <Divider /> {mileage} <Divider />{' '}
+            {type} <Divider /> {model} <Divider /> {mileage} <Divider />
             {functionalities[0]}
           </Item>
         </TextContainer>
       </List>
-      <BtnLearnMore type="button">Learn More</BtnLearnMore>
+      <BtnLearnMore type="button" onClick={handleOpenModal}>Learn More</BtnLearnMore>
     </Card>
   );
 }

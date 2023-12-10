@@ -1,119 +1,61 @@
-import Modal from './Modal/Modal';
-import { useEffect, useState } from 'react';
-import { getFetchOneCar } from '../../redux/operation';
+import Divider from 'components/Divider/Divider';
 
-export default function ModalCarInfo({ active, setActive, carId}) {
+export default function ModalCarInfo({ carInfo }) {
+  // const {
+  //   id,
+  //   year,
+  //   make,
+  //   model,
+  //   type,
+  //   img,
+  //   description,
+  //   fuelConsumption,
+  //   engineSize,
+  //   accessories,
+  //   functionalities,
+  //   rentalPrice,
+  //   rentalCompany,
+  //   // address,
+  //   mileage,
+  // } = carInfo;
+  // const rentConditions = carInfo?.rentalConditions.split('\n');
 
-    const [car,setCar] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
-    // const oneCar = () => {
-    //     carsList?.filter(({id})=> id === carId)
-    // }
-    // setCar(oneCar())
-    // console.log(carId)
-//   const {
-//     img,
-//     make,
-//     year,
-//     rentalPrice,
-//     address,
-//     rentalCompany,
-//     type,
-//     model,
-//     mileage,
-//     functionalities,
-//   } = car;
-// const getData = async () => {
-//     try {
-//       setIsLoading(true);
-
-//       const data =  await getFetchOneCar(carId);
-//       setCar(data);
-//     } catch (error) {
-//       console.log('error :>> ', error);
-//     } finally {
-//       setIsLoading(false);
-//     }
-//   };
-//   getData()
-// useEffect(() => {
-// getData()
-// }, []);
-  useEffect(() => {
-    if(carId.length<0 && !carId ){return}
-
-      const getData = async () => {
-    try {
-      setIsLoading(true);
-
-      const data =  await getFetchOneCar(carId);
-      setCar(...data);
-    } catch (error) {
-      console.log('error :>> ', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  getData()
-  }, [carId]);
-// useEffect(() => {
-//     const getData = async()=>{
-//         try{
-//             getFetchOneCar(carId).then(res=>setCar(...res))
-//             // setCar(res)
-//             console.log()    
-//         } catch (error) {
-//             console.log('error :>> ', error);
-//     }
-// }
-// getData()
-// }, [carId]);
-
-//   useEffect(() => {
-//     const carDetails = async () => {
-//         try {const data=
-//             await getFetchOneCar({
-//               carId,
-//             });
-//     setCar({data})    }
-//      catch (error) {
-//           console.log(error);
-//         }
-//       };
-//     carDetails();
-//   }, [carId]);
-  console.log(car)
-
+  console.log(carInfo);
 
   return (
     <>
-    {isLoading && <div>...Loading</div>}
-      <Modal active={active} setActive={setActive}>
-        <div>{car.id}</div>
-        {/* <div>
-        <img src={car.img} alt="car" width={274} height={268} />
+      <div>
+        <img src={carInfo.img} alt="car" width={274} height={268} />
         <ul>
+          <li>
+            {carInfo.make} <span>{carInfo.model}</span>, {carInfo.year}
+          </li>
           <div>
-            <li>{car.make}</li>
-            <li>{car.year}</li>
-            <li>{car.rentalPrice}</li>
+            <li>
+            {/* {carInfo.address.split(',').slice(-2)} <Divider /> Id:{carInfo.id} <Divider /> */}
+              {/* {carInfo.address[0]} <Divider /> {carInfo.address[1]} <Divider /> Id:{carInfo.id} <Divider /> */}
+              Year:{carInfo.year} <Divider /> Type: {carInfo.type}
+            </li>
+            <li>
+              Fuel Consumption: {carInfo.fuelConsumption} <Divider /> Engine Size:
+              {carInfo.engineSize}
+            </li>
           </div>
-          <div>
-            <div>
-              <li>{car.address}</li>
-              <li>{car.rentalCompany}</li>
-            </div>
-            <div>
-              <li>{car.type}</li>
-              <li>{car.model}</li>
-              <li>{car.mileage}</li>
-              <li>{car.functionalities}</li>
-            </div>
-          </div>
+          <p>{carInfo.description}</p>
         </ul>
-        </div> */}
-      </Modal>
-      ;
+        <ul>
+          <p>Accessories and functionalities:</p>
+          {/* <li>{accessories[0]} <Divider/> {accessories[1]} <Divider/> {functionalities[0]}</li>
+          <li>{accessories[2]} <Divider/> <Divider/> {functionalities[1]} <Divider/> {functionalities[2]}</li> */}
+        </ul>
+        <ul>
+          <p>Rental Conditions: </p>
+          <li>{carInfo.type}</li>
+          <li>{carInfo.model}</li>
+          <li>{carInfo.mileage}</li>
+          {/* <li>{rentConditions}</li> */}
+        </ul>
+      </div>
     </>
   );
 }
