@@ -4,7 +4,7 @@ import { getFetchCars } from './operation';
 const initialState = {
   cars: [],
   favorites: [],
-  page:1,
+  page: 1,
   isLoading: false,
   error: null,
 };
@@ -23,16 +23,17 @@ const carsSlice = createSlice({
   name: 'rentCars',
   initialState,
   reducers: {
-    favoritesCars: (state, action) => {
-      return {
-        ...state,
-        favorites: action.payload,
-      };
+    favoritesCars: (state, { payload }) => {
+      if (state.favorites.includes(payload)) {
+        state.favorites = state.favorites.filter(item => item !== payload);
+      } else {
+        state.favorites.push(payload);
+      }
     },
-    currentPage: (state, action) => {
+    currentPage: (state, { payload }) => {
       return {
         ...state,
-        page: action.payload,
+        page: payload,
       };
     },
   },
@@ -41,7 +42,7 @@ const carsSlice = createSlice({
       .addCase(getFetchCars.pending, handlePending)
       .addCase(getFetchCars.rejected, handleRejected)
       .addCase(getFetchCars.fulfilled, (state, { payload }) => {
-        state.cars = payload;
+        state.cars = [...state.cars, ...payload];
         state.isLoading = false;
       });
   },

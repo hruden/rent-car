@@ -1,5 +1,5 @@
 import Divider from 'components/Divider/Divider';
-import Fallback from '../../assets/images/fallback.jpg'
+import Fallback from '../../assets/images/fallback.jpg';
 import {
   Card,
   TitleContainer,
@@ -9,9 +9,17 @@ import {
   Img,
   BtnLearnMore,
   ContainerImg,
+  FavoriteIcon,
+  FavoriteIconCheck,
 } from './CatalogItem.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { favoritesCars } from '../../redux/slice';
+import { selectFavorites } from '../../redux/select';
 
 export default function CatalogItem({ list }) {
+  const favorites = useSelector(selectFavorites);
+
+  const dispatch = useDispatch();
   const {
     make,
     model,
@@ -23,13 +31,21 @@ export default function CatalogItem({ list }) {
     type,
     mileage,
     functionalities,
-    // id,
+    id,
   } = list;
+  const isFavorite = favorites.includes(id);
+
+
+  const handleFavorite = () => {
+    dispatch(favoritesCars(id));
+  };
+console.log()
   return (
     <Card>
       <ContainerImg>
-        <Img src={img?img:Fallback} alt="car" loading="lazy" />
+        <Img src={img ? img : Fallback} alt="car" loading="lazy" />
       </ContainerImg>
+      {isFavorite ? <FavoriteIconCheck onClick={handleFavorite}/> : <FavoriteIcon onClick={handleFavorite}/>}
       <List>
         <TitleContainer>
           <li>
