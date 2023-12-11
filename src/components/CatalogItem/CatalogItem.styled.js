@@ -36,7 +36,7 @@ right: 14px;
 width: 18px;
 height: 18px;
 cursor: pointer;
-fill: var(--brand);
+fill: var(--white);
 `
 export const ContainerImg = styled.div`
 width: 280px;

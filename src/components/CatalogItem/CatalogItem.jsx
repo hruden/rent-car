@@ -1,5 +1,5 @@
 import Divider from 'components/Divider/Divider';
-import Fallback from '../../assets/images/fallback.jpg';
+import Fallback from '../../assets/images/fullback.jpg';
 import {
   Card,
   TitleContainer,
@@ -43,7 +43,6 @@ export default function CatalogItem({ list, activeModal }) {
   const handleOpenModal = () => {
     activeModal(list);
   };
-  // console.log(addressArr)
   return (
     <Card>
       <ContainerImg>

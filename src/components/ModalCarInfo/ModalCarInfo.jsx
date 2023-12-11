@@ -1,6 +1,6 @@
 import Divider from 'components/Divider/Divider';
 import { BlueText, CallUs, Container, ContainerImg, Img, ListContainer, RentConditions, RentItem, TextContainer, Title, TitleAccessories, TitleContainerText } from './ModalCarInfo.styled';
-import Fallback from '../../assets/images/fallback.jpg';
+import Fallback from '../../assets/images/fullback.jpg';
 
 export default function ModalCarInfo({ carInfo }) {
   if (
