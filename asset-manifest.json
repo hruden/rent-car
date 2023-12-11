@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.js": "/rent-car/static/js/main.4087d162.js",
+    "main.js": "/rent-car/static/js/main.ebeb6f4e.js",
     "static/js/171.ed103f3b.chunk.js": "/rent-car/static/js/171.ed103f3b.chunk.js",
-    "static/js/397.2e63a89e.chunk.js": "/rent-car/static/js/397.2e63a89e.chunk.js",
-    "static/js/555.ef6c1f25.chunk.js": "/rent-car/static/js/555.ef6c1f25.chunk.js",
+    "static/js/397.9fd5e8b6.chunk.js": "/rent-car/static/js/397.9fd5e8b6.chunk.js",
+    "static/js/555.0d26b7f5.chunk.js": "/rent-car/static/js/555.0d26b7f5.chunk.js",
     "static/js/355.67cc4eb2.chunk.js": "/rent-car/static/js/355.67cc4eb2.chunk.js",
     "static/js/856.a79ef222.chunk.js": "/rent-car/static/js/856.a79ef222.chunk.js",
     "static/media/image-car.jpg": "/rent-car/static/media/image-car.65d29ce32b503a786c7e.jpg",
     "static/media/Car-Animation-V2.gif": "/rent-car/static/media/Car-Animation-V2.e0369b52978a8da0d4ef.gif",
     "static/media/logo.jpg": "/rent-car/static/media/logo.bbc3767853699c462f52.jpg",
-    "static/media/fallback.jpg": "/rent-car/static/media/fallback.1e00e2e1345952ab1b6d.jpg",
+    "static/media/fullback.jpg": "/rent-car/static/media/fullback.94a86df0c74b9b7d4720.jpg",
     "index.html": "/rent-car/index.html",
-    "main.4087d162.js.map": "/rent-car/static/js/main.4087d162.js.map",
+    "main.ebeb6f4e.js.map": "/rent-car/static/js/main.ebeb6f4e.js.map",
     "171.ed103f3b.chunk.js.map": "/rent-car/static/js/171.ed103f3b.chunk.js.map",
-    "397.2e63a89e.chunk.js.map": "/rent-car/static/js/397.2e63a89e.chunk.js.map",
-    "555.ef6c1f25.chunk.js.map": "/rent-car/static/js/555.ef6c1f25.chunk.js.map",
+    "397.9fd5e8b6.chunk.js.map": "/rent-car/static/js/397.9fd5e8b6.chunk.js.map",
+    "555.0d26b7f5.chunk.js.map": "/rent-car/static/js/555.0d26b7f5.chunk.js.map",
     "355.67cc4eb2.chunk.js.map": "/rent-car/static/js/355.67cc4eb2.chunk.js.map",
     "856.a79ef222.chunk.js.map": "/rent-car/static/js/856.a79ef222.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.4087d162.js"
+    "static/js/main.ebeb6f4e.js"
   ]
 }
