@@ -7,31 +7,18 @@ export default function Pagination() {
   const rentCars = useSelector(selectCars);
   const page = useSelector(selectPage);
 
-//   const handleBackPage = () => {
-//     const totalPage = page - 1;
-//     dispatch(currentPage(totalPage));
-//   };
   const handleNextPage = () => {
-    const totalPage = page + 1;
-    dispatch(currentPage(totalPage));
+    dispatch(currentPage(page + 1));
   };
   return (
     <div>
-      {/* {page !==1   && (
-        <button
-          type="button"
-          onClick={() => handleBackPage()}
-        >
-          Back page
+      {rentCars.length % 12 === 0 ? (
+        <button type="button" onClick={handleNextPage}>
+          Next page
         </button>
-      )} */}
-      {rentCars.length % 12 === 0 &&
-      <button
-        type="button"
-        onClick={() => handleNextPage()}
-      >
-        Next page
-      </button>}
+      ) : (
+        <p>No more pages available</p>
+      )}
     </div>
   );
 }

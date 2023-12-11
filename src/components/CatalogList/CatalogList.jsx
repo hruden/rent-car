@@ -11,7 +11,7 @@ import Modal from 'components/ModalCarInfo/Modal/Modal';
 
 export default function CatalogList() {
   const [modalActive, setModalActive] = useState(false);
-  const [moreInfo, setMoreInfo] = useState({})
+  const [moreInfo, setMoreInfo] = useState([])
   const dispatch = useDispatch();
   const rentCars = useSelector(selectCars);
   const page = useSelector(selectPage);

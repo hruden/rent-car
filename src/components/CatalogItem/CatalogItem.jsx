@@ -26,7 +26,7 @@ export default function CatalogItem({ list, activeModal }) {
     year,
     img,
     rentalPrice,
-    address,
+    // address,
     rentalCompany,
     type,
     mileage,
@@ -34,6 +34,8 @@ export default function CatalogItem({ list, activeModal }) {
     id,
   } = list;
   const isFavorite = favorites.includes(id);
+
+  const addressArr = list.address.split(',').slice(-2)
 
 
   const handleFavorite = () => {
@@ -43,7 +45,7 @@ export default function CatalogItem({ list, activeModal }) {
   const handleOpenModal =()=>{
 activeModal(list)
   }
-console.log()
+// console.log(addressArr)
   return (
     <Card>
       <ContainerImg>
@@ -59,7 +61,7 @@ console.log()
         </TitleContainer>
         <TextContainer>
           <Item>
-            {address.split(',').slice(-2)} <Divider /> {rentalCompany}
+            {addressArr[0]} <Divider /> {addressArr[1]} <Divider /> {rentalCompany}
           </Item>
           <Item>
             {type} <Divider /> {model} <Divider /> {mileage} <Divider />
