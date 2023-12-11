@@ -10,7 +10,6 @@ import CatalogItem from 'components/CatalogItem/CatalogItem';
 export default function FavoriteList() {
   const isLoading = useSelector(selectIsLoading);
   const favoritesList = useSelector(getVisibleFavorite);
-  // console.log(favoritesList)
 
   return (
     <>
@@ -23,7 +22,6 @@ export default function FavoriteList() {
               return <CatalogItem key={list.id} list={list} />;
             })}
           </ContainerList>
-          {/* <Pagination/> */}
         </>
       )}
     </>

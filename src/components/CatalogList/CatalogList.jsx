@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   selectCars,
   selectIsLoading,
-  selectPage,
 } from '../../redux/CarsRent/select';
 import { getFetchCars } from '../../redux/CarsRent/operation';
 import CatalogItem from 'components/CatalogItem/CatalogItem';

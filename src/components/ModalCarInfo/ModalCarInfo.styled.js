@@ -64,6 +64,7 @@ background-color: var(--rentalBtn);
 margin-bottom:8px;
 `
 export const CallUs = styled.a`
+cursor: pointer;
 padding: 12px 50px;
 border: transparent;
 border-radius: 12px;
@@ -71,6 +72,7 @@ font-size: 14px;
 font-weight: 600;
 color: var(--white);
 background-color: var(--brand);
+transition: background-color var(--transition);
 &:hover,:focus{
     background-color: var(--accent);
 }
