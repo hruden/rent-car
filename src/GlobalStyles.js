@@ -49,6 +49,8 @@ export const GlobalStyle = createGlobalStyle`
   :root{
     
 --black: #000000;
+--rental:#363535;
+--rentalBtn:#F9F9F9;
   --white: #ffffff;
   --brand: #3470ff;
   --accent: #0b44cd;

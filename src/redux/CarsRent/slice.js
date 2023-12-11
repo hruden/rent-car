@@ -4,7 +4,6 @@ import { getFetchCars } from './operation';
 const initialState = {
   cars: [],
   favorites: [],
-  page: 1,
   isLoading: false,
   error: null,
 };
@@ -30,19 +29,13 @@ const carsSlice = createSlice({
         state.favorites.push(payload);
       }
     },
-    currentPage: (state, { payload }) => {
-      return {
-        ...state,
-        page: payload,
-      };
-    },
   },
   extraReducers: builder => {
     builder
       .addCase(getFetchCars.pending, handlePending)
       .addCase(getFetchCars.rejected, handleRejected)
       .addCase(getFetchCars.fulfilled, (state, { payload }) => {
-        state.cars = [...state.cars, ...payload];
+        state.cars.push(...payload);
         state.isLoading = false;
       });
   },

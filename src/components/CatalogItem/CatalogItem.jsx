@@ -13,8 +13,8 @@ import {
   FavoriteIconCheck,
 } from './CatalogItem.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { favoritesCars } from '../../redux/slice';
-import { selectFavorites } from '../../redux/select';
+import { favoritesCars } from '../../redux/CarsRent/slice';
+import { selectFavorites } from '../../redux/CarsRent/select';
 
 export default function CatalogItem({ list, activeModal }) {
   const favorites = useSelector(selectFavorites);
@@ -26,7 +26,6 @@ export default function CatalogItem({ list, activeModal }) {
     year,
     img,
     rentalPrice,
-    // address,
     rentalCompany,
     type,
     mileage,
@@ -35,23 +34,26 @@ export default function CatalogItem({ list, activeModal }) {
   } = list;
   const isFavorite = favorites.includes(id);
 
-  const addressArr = list.address.split(',').slice(-2)
-
+  const addressArr = list.address.split(',').slice(-2);
 
   const handleFavorite = () => {
     dispatch(favoritesCars(id));
   };
 
-  const handleOpenModal =()=>{
-activeModal(list)
-  }
-// console.log(addressArr)
+  const handleOpenModal = () => {
+    activeModal(list);
+  };
+  // console.log(addressArr)
   return (
     <Card>
       <ContainerImg>
         <Img src={img ? img : Fallback} alt="car" loading="lazy" />
       </ContainerImg>
-      {isFavorite ? <FavoriteIconCheck onClick={handleFavorite}/> : <FavoriteIcon onClick={handleFavorite}/>}
+      {isFavorite ? (
+        <FavoriteIconCheck onClick={handleFavorite} />
+      ) : (
+        <FavoriteIcon onClick={handleFavorite} />
+      )}
       <List>
         <TitleContainer>
           <li>
@@ -61,7 +63,8 @@ activeModal(list)
         </TitleContainer>
         <TextContainer>
           <Item>
-            {addressArr[0]} <Divider /> {addressArr[1]} <Divider /> {rentalCompany}
+            {addressArr[0]} <Divider /> {addressArr[1]} <Divider />{' '}
+            {rentalCompany}
           </Item>
           <Item>
             {type} <Divider /> {model} <Divider /> {mileage} <Divider />
@@ -69,7 +72,9 @@ activeModal(list)
           </Item>
         </TextContainer>
       </List>
-      <BtnLearnMore type="button" onClick={handleOpenModal}>Learn More</BtnLearnMore>
+      <BtnLearnMore type="button" onClick={handleOpenModal}>
+        Learn More
+      </BtnLearnMore>
     </Card>
   );
 }

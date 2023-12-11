@@ -1,8 +1,12 @@
 import ModalCarInfo from 'components/ModalCarInfo/ModalCarInfo';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCars, selectIsLoading, selectPage } from '../../redux/select';
-import { getFetchCars } from '../../redux/operation';
+import {
+  selectCars,
+  selectIsLoading,
+  selectPage,
+} from '../../redux/CarsRent/select';
+import { getFetchCars } from '../../redux/CarsRent/operation';
 import CatalogItem from 'components/CatalogItem/CatalogItem';
 import { ContainerList } from './CatalogList.styled';
 import Loader from 'components/Loader/Loader';
@@ -11,19 +15,25 @@ import Modal from 'components/ModalCarInfo/Modal/Modal';
 
 export default function CatalogList() {
   const [modalActive, setModalActive] = useState(false);
-  const [moreInfo, setMoreInfo] = useState([])
+  const [moreInfo, setMoreInfo] = useState([]);
+  const [page, setPage] = useState(1)
   const dispatch = useDispatch();
   const rentCars = useSelector(selectCars);
-  const page = useSelector(selectPage);
   const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
-    dispatch(getFetchCars(page));
-  }, [dispatch, page]);
+    if (rentCars.length === 0) {
+      dispatch(getFetchCars(page));
+    }
+  }, [dispatch, page, rentCars]);
 
-  const openModal = (data) => {
+  const openModal = data => {
     setModalActive(true);
     setMoreInfo(data);
+  };
+  const handleNextPage = () => {
+    setPage(prev => prev + 1);
+    dispatch(getFetchCars(page+1))
   };
 
   return (
@@ -34,14 +44,20 @@ export default function CatalogList() {
         <>
           <ContainerList>
             {rentCars?.map(list => {
-              return <CatalogItem key={list.id} list={list} activeModal={openModal}/>;
+              return (
+                <CatalogItem
+                  key={list.id}
+                  list={list}
+                  activeModal={openModal}
+                />
+              );
             })}
           </ContainerList>
-          <Pagination/>
+          <Pagination loadMore={handleNextPage}/>
         </>
       )}
       <Modal active={modalActive} setActive={setModalActive}>
-          <ModalCarInfo carInfo={moreInfo}/>
+        <ModalCarInfo carInfo={moreInfo} />
       </Modal>
     </>
   );

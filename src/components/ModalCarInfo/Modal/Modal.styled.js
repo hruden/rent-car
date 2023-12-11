@@ -22,6 +22,8 @@ export const ModalContent = styled.div`
     transform: ${props => props.$primary ? 'scale(1)':'scale(0.5)'};
     transition: 0.4s all;
     max-width: 290px;
+    max-height: 80vh;
+  overflow-y: auto;
     @media screen and (min-width: 768px){
         border-radius: 40px;
         max-width: 681px;
@@ -35,7 +37,7 @@ export const ModalCloseBtn = styled.button`
     height: 24px;
     padding: 0;
     background-color: transparent;
-    color: blue;
+    color: var(--brand);
     border: none;
     cursor: pointer;
     & svg {
@@ -43,7 +45,7 @@ export const ModalCloseBtn = styled.button`
         height: 24px;
     }
     &:hover{
-        color: yellow;
+        color: var(--accent);
     }
     @media screen and (min-width: 768px){
         top: 24px;
