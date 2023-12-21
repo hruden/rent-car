@@ -10,8 +10,9 @@ color: var(--textTitle);
 }
 `
 export const ContainerImg = styled.div`
-width: 280px;
-height: 210px;
+  width: 100%;
+  height: 268px;
+  overflow: hidden;
 margin-bottom: 14px;
 @media screen and (min-width: 768px) {
     width: 461px;
@@ -20,6 +21,9 @@ height: 248px;
 }
 `
 export const Img = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 border-radius: 14px;
 border: transparent;
 `

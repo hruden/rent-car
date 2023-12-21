@@ -22,12 +22,12 @@ export default function ModalCarInfo({ carInfo }) {
     .split('')
     .map((el, i) => (i === 0 ? `${el},` : el))
     .join('');
-
+console.log(carInfo)
   return (
     <>
       <Container>
         <ContainerImg>
-          <Img src={carInfo.img?carInfo: Fallback} alt="car" loading="lazy"/>
+          <Img src={carInfo.img?carInfo.img: Fallback} alt="car" loading="lazy"/>
         </ContainerImg>
         <ListContainer>
           <Title>
