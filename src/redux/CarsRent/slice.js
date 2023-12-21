@@ -41,5 +41,5 @@ const carsSlice = createSlice({
   },
 });
 
-export const { favoritesCars, currentPage } = carsSlice.actions;
+export const { favoritesCars} = carsSlice.actions;  
 export const carsReducer = carsSlice.reducer;

@@ -11,7 +11,7 @@ export default function Pagination({loadMore}) {
           Load More
         </LoadMoreBtn>
       ) : (
-        <p>No more pages available</p>
+        null
       )}
     </div>
   );
