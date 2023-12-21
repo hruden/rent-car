@@ -1,5 +1,5 @@
 import Divider from 'components/Divider/Divider';
-import { BlueText, CallUs, Container, ContainerImg, Img, ListContainer, RentConditions, RentItem, TextContainer, Title, TitleAccessories, TitleContainerText } from './ModalCarInfo.styled';
+import { BlueText, CallUs, Container, ContainerImg, ListContainer, RentConditions, RentItem, TextContainer, Title, TitleAccessories, TitleContainerText } from './ModalCarInfo.styled';
 import Fallback from '../../assets/images/fullback.jpg';
 
 export default function ModalCarInfo({ carInfo }) {
@@ -22,12 +22,11 @@ export default function ModalCarInfo({ carInfo }) {
     .split('')
     .map((el, i) => (i === 0 ? `${el},` : el))
     .join('');
-console.log(carInfo)
   return (
     <>
       <Container>
         <ContainerImg>
-          <Img src={carInfo.img?carInfo.img: Fallback} alt="car" loading="lazy"/>
+          <img src={carInfo.img?carInfo.img: Fallback} alt="car" loading="lazy"/>
         </ContainerImg>
         <ListContainer>
           <Title>

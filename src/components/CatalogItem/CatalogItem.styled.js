@@ -42,13 +42,12 @@ export const ContainerImg = styled.div`
   width: 100%;
   height: 268px;
   overflow: hidden;
-`;
-export const Img = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
   border-radius: 14px;
-  border: transparent;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 `;
 export const List = styled.ul`
   padding: 0 5px;

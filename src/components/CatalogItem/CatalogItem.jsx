@@ -6,7 +6,6 @@ import {
   Item,
   List,
   TextContainer,
-  Img,
   BtnLearnMore,
   ContainerImg,
   FavoriteIcon,
@@ -46,7 +45,7 @@ export default function CatalogItem({ list, activeModal }) {
   return (
     <Card>
       <ContainerImg>
-        <Img src={img ? img : Fallback} alt="car" loading="lazy" />
+        <img src={img ? img : Fallback} alt="car" loading="lazy" />
       </ContainerImg>
       {isFavorite ? (
         <FavoriteIconCheck onClick={handleFavorite} />
