@@ -60,6 +60,9 @@ export const TitleContainer = styled.div`
   color: var(--textTitle);
   margin-bottom: 8px;
 `;
+export const BlueText = styled.span`
+  color: var(--brand);
+`;
 export const TextContainer = styled.div`
   color: var(--textInfo);
 `;

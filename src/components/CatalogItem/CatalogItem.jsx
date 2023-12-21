@@ -10,6 +10,7 @@ import {
   ContainerImg,
   FavoriteIcon,
   FavoriteIconCheck,
+  BlueText,
 } from './CatalogItem.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { favoritesCars } from '../../redux/CarsRent/slice';
@@ -55,7 +56,7 @@ export default function CatalogItem({ list, activeModal }) {
       <List>
         <TitleContainer>
           <li>
-            {make}, {year}
+            {make} <BlueText>{model}</BlueText>, {year}
           </li>
           <li>{rentalPrice}</li>
         </TitleContainer>
