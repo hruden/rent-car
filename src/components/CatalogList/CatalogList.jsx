@@ -1,10 +1,7 @@
 import ModalCarInfo from 'components/ModalCarInfo/ModalCarInfo';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  selectCars,
-  selectIsLoading,
-} from '../../redux/CarsRent/select';
+import { selectCars, selectIsLoading } from '../../redux/CarsRent/select';
 import { getFetchCars } from '../../redux/CarsRent/operation';
 import CatalogItem from 'components/CatalogItem/CatalogItem';
 import { ContainerList } from './CatalogList.styled';
@@ -15,7 +12,7 @@ import Modal from 'components/ModalCarInfo/Modal/Modal';
 export default function CatalogList() {
   const [modalActive, setModalActive] = useState(false);
   const [moreInfo, setMoreInfo] = useState([]);
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   const rentCars = useSelector(selectCars);
   const isLoading = useSelector(selectIsLoading);
@@ -32,7 +29,7 @@ export default function CatalogList() {
   };
   const handleNextPage = () => {
     setPage(prev => prev + 1);
-    dispatch(getFetchCars(page+1))
+    dispatch(getFetchCars(page + 1));
   };
 
   return (
@@ -52,7 +49,7 @@ export default function CatalogList() {
               );
             })}
           </ContainerList>
-          <Pagination loadMore={handleNextPage}/>
+          <Pagination loadMore={handleNextPage} />
         </>
       )}
       <Modal active={modalActive} setActive={setModalActive}>
