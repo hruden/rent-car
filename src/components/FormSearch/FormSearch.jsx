@@ -29,7 +29,7 @@ const handle = `to ${prise.value} $`
         <label>Car brand</label>
         <select name='brand' value={brand.value} onChange={handleChange}>
             <option value="Select brand">Select brand</option>
-            <option value="LG">LG</option>
+            <option value="lg">LG</option>
         </select>
         <label>Price/ 1 hour</label>
         <select value={handle} onChange={handleChange}>
