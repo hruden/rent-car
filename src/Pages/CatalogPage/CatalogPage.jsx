@@ -5,7 +5,7 @@ export default function CatalogPage() {
 
   return (
     <>
-      {/* <FormSearch/> */}
+      <FormSearch/>
       <CatalogList/>
     </>
   );
